@@ -297,6 +297,9 @@ db.collection("Chats")
 - **[✅ CHECKPOINT]** Great! Now when you send messages, you should see "New Snapshot!" in your console.
 - **[✅ CHECKPOINT]** Now if you add a message in your Firestore database dashboard, it should appear immediately in your app **without having to refresh the app.**
 
+Example of adding another message to your Firestore database dashboard (Note: this example uses "mysecondchat" in place of "myfirstchat"):
+![https://i.imgur.com/uk84rhK.png](https://i.imgur.com/uk84rhK.png)
+
 - There's one last thing to do. At some point we want to **stop listening** to updates. This is called "**unsubscribing**".
     - Q: when do we want to stop listening? A: when we exit the chat view!
     - Q: How do we know when we're exiting the chat view? A: Whenever a component gets "unmounted" (fancy React word for taken off screen), it runs a "**cleanup**" function.
