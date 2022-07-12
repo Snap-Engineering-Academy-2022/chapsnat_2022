@@ -328,7 +328,7 @@ Example of adding another message to your Firestore database dashboard (Note: th
         ```
         
 
-## UPDATE HERE!! FINAL CODE FOR PART A LAB:
+## FINAL CODE FOR PART A LAB:
 
 [https://github.com/Snap-Engineering-Academy-2022/chapsnat_2022/tree/final_code_part_A](https://github.com/Snap-Engineering-Academy-2022/chapsnat_2022/tree/final_code_part_A)
 
