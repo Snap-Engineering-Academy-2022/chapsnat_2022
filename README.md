@@ -299,10 +299,6 @@ This one is actually surprisingly easy! Let's revisit our `useEffect` function.
 - And replace it with this code:
 
 ```jsx
-onSnapshot(doc(db, "Chats", "myfirstchat"), (snapshot) => {
-      console.log("New Snapshot! ", snapshot.data().messages);
-      setMessages(snapshot.data().messages);
-});
   useEffect(() => {
     onSnapshot(doc(db, "Chats", "myfirstchat"), (snapshot) => {
       console.log("New Snapshot! ", snapshot.data().messages);
