@@ -259,15 +259,15 @@ const onSend = useCallback(async (messages = []) => {
 	## Your final `onSend` code should look something like this:
 
 	```jsx
-
 	const onSend = useCallback(async (messages = []) => {
 	    await updateDoc(doc(db, "Chats", "myfirstchat"), {
 	      messages: arrayUnion(messages[0])
 	    });
 	    setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
 	}, [])
-
 	```
+	
+	Make sure to import `updateDoc` and `arrayUnion` too!
 
 	</details>
 
@@ -334,10 +334,6 @@ Example of adding another message to your Firestore database dashboard (Note: th
         }, []);
         ```
         
-
-## FINAL CODE FOR PART A LAB:
-
-[https://github.com/Snap-Engineering-Academy-2022/chapsnat_2022/tree/final_code_part_A](https://github.com/Snap-Engineering-Academy-2022/chapsnat_2022/tree/final_code_part_A)
 
 ---
 
