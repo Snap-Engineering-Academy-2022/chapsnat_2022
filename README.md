@@ -219,7 +219,9 @@ First! Beware that we're about to potentially **lose all our dummy messages in a
 
 - Let's add some code to the beginning of `onSend` callback to upload our new messages to Firestore:
     
-```jsx    
+    
+```jsx
+// UPDATED for new documentation syntax
 const onSend = useCallback(async (messages = []) => {
     await setDoc(doc(db, "Chats", "myfirstchat"), {
       messages: messages
@@ -228,7 +230,6 @@ const onSend = useCallback(async (messages = []) => {
 }, [])
 ```
     
-    - Discuss again! What is `.set` doing? Why don't we need `.then` ?
 - Send a message and now go to your Firestore database dashboard
     - **[✅ CHECKPOINT]** Wow! You should see the message appear in your dashboard.
     - **BUT** your old messages disappeared!
