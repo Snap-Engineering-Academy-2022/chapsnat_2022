@@ -1,3 +1,8 @@
+# Table of Contents
+- [Week 5 day 2](https://github.com/Snap-Engineering-Academy-2022/chapsnat_2022#week-5-day-2)
+- [Week 5 day 3](https://github.com/Snap-Engineering-Academy-2022/chapsnat_2022#week-5-day-3)
+- [Week 5 day 4](https://github.com/Snap-Engineering-Academy-2022/chapsnat_2022#week-5-day-4)
+
 # Week 5 day 2
 
 # Part A: Lab time with GiftedChat 🧪
