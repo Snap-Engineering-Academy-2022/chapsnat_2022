@@ -253,13 +253,12 @@ const onSend = useCallback(async (messages = []) => {
             - You'll need to use `arrayUnion` too!
     </details>
 
-    <details>
+<details>
+<summary>Answer:</summary>
 
-    <summary>Answer:</summary>
+    Your final `onSend` code should look something like this:
 
-    ## Your final `onSend` code should look something like this:
-
-```js
+```jsx
 
 const onSend = useCallback(async (messages = []) => {
     await updateDoc(doc(db, "Chats", "myfirstchat"), {
@@ -270,7 +269,7 @@ const onSend = useCallback(async (messages = []) => {
 
 ```
 
-    </details>
+</details>
 
             
 
