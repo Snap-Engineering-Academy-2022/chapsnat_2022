@@ -248,9 +248,9 @@ const onSend = useCallback(async (messages = []) => {
     <details>
     <summary>Hints:</summary>
     
-    - might need to use `.update` instead of `.set`
+    - might need to use `updateDoc` instead of `setDoc`
     - 👀 [https://firebase.google.com/docs/firestore/manage-data/add-data#update_elements_in_an_array](https://firebase.google.com/docs/firestore/manage-data/add-data#update_elements_in_an_array)
-            - You'll need to `import firebase from "firebase/app"` at the top of `App.js` in order to  `firebase.firestore.FieldValue.arrayUnion(...)`
+            - You'll need to use `arrayUnion` too!
     </details>
 
     <details>
@@ -260,17 +260,12 @@ const onSend = useCallback(async (messages = []) => {
     ## Your final `onSend` code should look something like this:
 
     ```jsx
-    const onSend = useCallback((messages = []) => {
-        db.collection("Chats")
-        .doc("myfirstchat")
-        .update({
-            // arrayUnion appends the message to the existing array
-            messages: firebase.firestore.FieldValue.arrayUnion(messages[0]),
-        });
-        setMessages((previousMessages) =>
-        GiftedChat.append(previousMessages, messages)
-        );
-    }, []);
+const onSend = useCallback(async (messages = []) => {
+    await updateDoc(doc(db, "Chats", "myfirstchat"), {
+      messages: arrayUnion(messages[0])
+    });
+    setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
+}, [])
     ```
 
     </details>
