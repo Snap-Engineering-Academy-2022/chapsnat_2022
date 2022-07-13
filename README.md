@@ -259,14 +259,16 @@ const onSend = useCallback(async (messages = []) => {
 
     ## Your final `onSend` code should look something like this:
 
-    ```jsx
+```js
+
 const onSend = useCallback(async (messages = []) => {
     await updateDoc(doc(db, "Chats", "myfirstchat"), {
       messages: arrayUnion(messages[0])
     });
     setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
 }, [])
-    ```
+
+```
 
     </details>
 
