@@ -253,23 +253,23 @@ const onSend = useCallback(async (messages = []) => {
             - You'll need to use `arrayUnion` too!
     </details>
 
-<details>
-<summary>Answer:</summary>
+	<details>
+	<summary>Answer:</summary>
 
-    Your final `onSend` code should look something like this:
+	## Your final `onSend` code should look something like this:
 
-```jsx
+	```jsx
 
-const onSend = useCallback(async (messages = []) => {
-    await updateDoc(doc(db, "Chats", "myfirstchat"), {
-      messages: arrayUnion(messages[0])
-    });
-    setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
-}, [])
+	const onSend = useCallback(async (messages = []) => {
+	    await updateDoc(doc(db, "Chats", "myfirstchat"), {
+	      messages: arrayUnion(messages[0])
+	    });
+	    setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
+	}, [])
 
-```
+	```
 
-</details>
+	</details>
 
             
 
