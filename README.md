@@ -282,23 +282,33 @@ This one is actually surprisingly easy! Let's revisit our `useEffect` function.
 - All we do is take this code:
 
 ```jsx
-db.collection("Chats")
-  .doc("myfirstchat")
-  .get()
-  .then((snapshot) => {
-		...
-	}
+  useEffect(() => {
+    async function getChat() {
+      console.log("starting get!")
+      const chatsCol = collection(db, 'Chats');
+      const chatsDoc = await getDocs(chatsCol);
+      const chatData = chatsDoc.docs.map(doc => doc.data());
+      console.log("here chatData", chatData);
+      setMessages(chatData[0].messages);
+    }
+
+    getChat();
+  }, []);
 ```
 
 - And replace it with this code:
 
 ```jsx
-db.collection("Chats")
-  .doc("myfirstchat")
-  .onSnapshot((snapshot) => {
-    console.log("New Snapshot!");
-		...
-	}
+onSnapshot(doc(db, "Chats", "myfirstchat"), (snapshot) => {
+      console.log("New Snapshot! ", snapshot.data().messages);
+      setMessages(snapshot.data().messages);
+});
+  useEffect(() => {
+    onSnapshot(doc(db, "Chats", "myfirstchat"), (snapshot) => {
+      console.log("New Snapshot! ", snapshot.data().messages);
+      setMessages(snapshot.data().messages);
+    });
+  }, []);
 ```
 
 - **[✅ CHECKPOINT]** Great! Now when you send messages, you should see "New Snapshot!" in your console.
