@@ -326,13 +326,10 @@ Example of adding another message to your Firestore database dashboard (Note: th
         
         ```jsx
         useEffect(() => {
-          let unsubscribeFromNewSnapshots = db
-            .collection("Chats")
-            .doc("myfirstchat")
-            .onSnapshot((snapshot) => {
-              console.log("New Snapshot!");
-              setMessages(snapshot.data().messages);
-            });
+          let unsubscribeFromNewSnapshots = onSnapshot(doc(db, "Chats", "myfirstchat"), (snapshot) => {
+            console.log("New Snapshot! ", snapshot.data().messages);
+            setMessages(snapshot.data().messages);
+          });
         
           return function cleanupBeforeUnmounting() {
             unsubscribeFromNewSnapshots();
