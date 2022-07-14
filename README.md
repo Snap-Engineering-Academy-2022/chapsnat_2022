@@ -485,14 +485,6 @@ Tab Navigators are where it's at! We definitely want one of these in our `Chapsn
 
 ---
 
-# Part B: Login and Signup Lab
-
-[Login & Sign up Lab](https://github.com/Snap-Engineering-Academy-2022/Login-and-Signup-Lab)
-
-**🌴Optional Resources**
-
-- Firebase documentation for currUser, signInWithEmailAndPassword, createUserWithEmailAndPassword: [https://firebase.google.com/docs/auth/web/manage-users](https://firebase.google.com/docs/auth/web/manage-users) and [https://firebase.google.com/docs/auth/web/password-auth](https://firebase.google.com/docs/auth/web/password-auth)
-
 # End of Week 5 day 4
 --------------------
 
